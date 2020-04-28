@@ -1,0 +1,85 @@
+#RB-header {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 1.47rem;
+}
+#RB-header ul li {
+  line-height: 1.47rem;
+}
+.Help-main {
+  padding-top: 0.43rem;
+  margin-top: 1.47rem;
+}
+.Help-main .Help-main-content {
+  width: 12.02rem;
+}
+.Help-main .Help-main-content .main-content-input {
+  width: 11.97rem;
+  height: 0.8rem;
+}
+.Help-main .Help-main-content .main-content-input .text {
+  border: 0;
+  height: 0.8rem;
+  width: 10.26rem;
+  background-color: #f5f5f5;
+  border-radius: 0.4rem 0 0 0.4rem;
+  padding-left: 0.89rem;
+  color: #333333;
+  opacity: 0.5;
+  background-image: url("/src-local/images/搜索.png");
+  background-repeat: no-repeat;
+  background-position: 0.28rem center;
+  background-size: 0.37rem 0.36rem;
+  font-size: 0.24rem;
+}
+.Help-main .Help-main-content .main-content-input .btn {
+  border: 0;
+  background-color: #34A3FF;
+  width: 1.71rem;
+  height: 0.8rem;
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-size: 0.24rem;
+  color: #ffffff;
+}
+.Help-main .Help-main-content .main-content-p {
+  padding-bottom: 0.3rem;
+}
+.Help-main .Help-main-content .main-content-p h4 {
+  padding-top: 0.3rem;
+  font-size: 0.38rem;
+  color: #22628c;
+  line-height: 0.8rem;
+}
+.Help-main .Help-main-content .main-content-p p {
+  font-size: 0.24rem;
+  color: #333333;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+#RB-choose {
+  height: 6.66rem;
+}
+#RB-choose .RB-choose-content {
+  padding-top: 1.4rem;
+}
+#RB-choose .RB-choose-content h3 {
+  font-size: 0.36rem;
+  color: #333333;
+}
+#RB-footer {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+/* 搜索 */
+span.match{
+  background-color:#f8dda9;
+  border:1px solid #edd19b;
+  margin:-1px;
+}
+.outerContent{
+  height: 12rem;
+  overflow-y: scroll;
+}
+.content{
+  height: 38rem;
+}
+.outerContent::-webkit-scrollbar {display:none}
+

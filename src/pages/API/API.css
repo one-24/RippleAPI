@@ -1,0 +1,243 @@
+.API-banner {
+  width: 19.2rem;
+  height: 10rem;
+  position: relative;
+}
+.API-banner img {
+  max-width: 19.2rem;
+}
+.API-banner-font {
+  width: 8rem;
+  height: 3rem;
+  position: absolute;
+  left: 4rem;
+  top: 4rem;
+  z-index: 1;
+}
+.API-banner-font h2 {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.API-banner-font .block {
+  width: 2.32rem;
+  height: 0.06rem;
+  background-color: #34a3ff;
+}
+.API-main {
+  padding-top: 0.4rem;
+}
+.API-main .API-main-title {
+  font-size: 0.4rem;
+  color: #22628c;
+}
+.API-main .API-main-title span {
+  border-bottom: 0.06rem solid #22628c;
+}
+.API-main .API-main-pay {
+  height: 13.12rem;
+  margin-bottom: 2.36rem;
+}
+.API-main .API-main-pay .one-pay {
+  height: 50%;
+  width: 50%;
+  padding-top: 1.53rem;
+  position: relative;
+  padding-right: 1.42rem;
+}
+.API-main .API-main-pay .one-pay .circle {
+  margin: 0 auto;
+  height: 0.96rem;
+  overflow: hidden;
+  animation: rotate 3s linear;
+}
+.API-main .API-main-pay .one-pay .circle .circle-content {
+  margin: 0 auto;
+  width: 2.76rem;
+  height: 2.76rem;
+  border-radius: 50%;
+  border: 2px solid #2f4e5f;
+}
+.API-main .API-main-pay .one-pay .icon {
+  opacity: 0;
+  width: 1.06rem;
+  height: 1.02rem;
+  margin: 0 auto;
+  animation: iconDisplay 3s linear forwards 2s;
+  margin-bottom: 0.2rem;
+}
+.API-main .API-main-pay .one-pay .icon img {
+  max-width: 1.06rem;
+}
+.API-main .API-main-pay .one-pay .one-pay-font {
+  text-align: center;
+  font-size: 0.32rem;
+  color: #333333;
+  line-height: 0.6rem;
+}
+.API-main .API-main-pay .one-pay .one-pay-font span {
+  border-bottom: 2px solid #2f4e5f;
+}
+.API-main .API-main-pay .one-pay .pp {
+  font-size: 0.24rem;
+  margin-top: 0.25rem;
+  color: #333333;
+}
+.API-main .API-main-pay .pdl {
+  padding-right: 0;
+  padding-left: 1.42rem;
+}
+.API-main .API-main-join {
+  height: 10.4rem;
+  width: 13.02rem;
+  background-color: #fff;
+  position: relative;
+}
+.API-main .API-main-join p {
+  text-align: center;
+}
+.API-main .API-main-join .main-join-left {
+  width: 50%;
+  height: 10.17rem;
+  position: relative;
+  padding-top: 0.57rem;
+}
+.API-main .API-main-join .main-join-left .main-join-icon {
+  border-radius: 50%;
+  z-index: 1;
+  width: 1.56rem;
+  height: 1.56rem;
+  position: absolute;
+  left: 2.44rem;
+  background: url("../../images/网络深色.png") no-repeat left top;
+  background-size: 1.56rem;
+}
+.API-main .API-main-join .main-join-left .main-join-content1 {
+  height: 0;
+  width: 100%;
+  background: url(../../images/矢量智能对象.png) no-repeat center top;
+  background-size: 6.18rem;
+  position: absolute;
+  top: 0.56rem;
+}
+.API-main .API-main-join .main-join-left .main-join-content1 .main-join-title {
+  font-size: 0.3rem;
+  color: #ffffff;
+  line-height: 1rem;
+  margin-top: 1.9rem;
+}
+.API-main .API-main-join .main-join-left .main-join-content1 .main-join-fonts {
+  width: 4.31rem;
+  height: 3.59rem;
+  font-family: "PingFang-SC-Medium";
+  font-size: 0.24rem;
+  color: #ffffff;
+  margin-left: 1.1rem;
+}
+.API-main .API-main-join .main-join-right {
+  width: 50%;
+  padding-top: 0.57rem;
+  height: 10.17rem;
+  padding-left: 1.52rem;
+  position: relative;
+}
+.API-main .API-main-join .main-join-right .main-right-icon {
+  position: absolute;
+  right: 1.16rem;
+  height: 1.47rem;
+  width: 1.47rem;
+  background: url(../../images/用户.png) no-repeat left top;
+  background-size: 1.47rem;
+}
+.API-main .API-main-join .main-join-right .main-join-content2 {
+  width: 6.18rem;
+  height: 0;
+  overflow: hidden;
+  background: url('../../images/矢量智能对象.png') no-repeat center top;
+  background-size: 6.18rem;
+}
+.API-main .API-main-join .main-join-right .main-join-content2 .join-right-title {
+  font-size: 0.3rem;
+  color: #fff;
+  line-height: 1rem;
+  margin-top: 1.9rem;
+}
+.API-main .API-main-join .main-join-right .main-join-content2 .join-right-fonts {
+  width: 4.32rem;
+  height: 1.91rem;
+  font-size: 0.24rem;
+  color: #fff;
+  margin: 0 auto;
+  text-align: left;
+}
+.API-main .API-main-join .block {
+  width: 6.72rem;
+  height: 0.05rem;
+  background-color: #2f4e5f;
+  position: absolute;
+  left: 3.77rem;
+  top: 2.16rem;
+}
+.API-main .API-main-advantage {
+  width: 13.87rem;
+  height: 2.1rem;
+  margin-top: 1.69rem;
+}
+.API-main .API-main-advantage .main-advantage-box {
+  width: 3.02rem;
+  height: 100%;
+}
+.API-main .API-main-advantage .main-advantage-box .advantage-one {
+  line-height: 0.6rem;
+  text-align: center;
+  background: url("../../images/支付.png") no-repeat;
+  background-size: 0.6rem;
+  background-position: 0.23rem center;
+  margin-bottom: 0.39rem;
+}
+.API-main .API-main-advantage .main-advantage-box .advantage-one span {
+  font-size: 0.3rem;
+  color: #333333;
+  border-bottom: 0.06rem solid #2f4e5f;
+}
+.API-main .API-main-advantage .main-advantage-box .advantage-two {
+  color: #333333;
+}
+.API-main .API-main-advantage .main-advantage-box:nth-child(2) .advantage-one {
+  background: url("../../images/扩展性.png") no-repeat;
+  background-size: 0.6rem;
+  background-position: 0.23rem center;
+}
+.API-main .API-main-advantage .main-advantage-box:nth-child(3) .advantage-one {
+  background: url("../../images/安全稳定.png") no-repeat;
+  background-size: 0.48rem;
+  background-position: 0.23rem center;
+}
+.API-main .API-main-advantage .main-advantage-box + .main-advantage-box {
+  margin-left: 2.4rem;
+}
+.API-main #RB-choose {
+  height: 4.65rem;
+  margin-top: 1.2rem;
+}
+.API-main #RB-choose .RB-choose-content {
+  height: 100%;
+}
+@keyframes iconDisplay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    width: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    width: 2.76rem;
+    transform-origin: 50% 150%;
+    transform: rotate(360deg);
+  }
+}

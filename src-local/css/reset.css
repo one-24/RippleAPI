@@ -1,0 +1,95 @@
+@charset "utf-8";
+* {font-family: "PingFang-SC-Bold";}
+.body{overflow-x:hidden;overflow-y: hidden;}
+body, div, dl, dt, dd, ul, ol, li,h1, h2, h3, h4, h5, h6, pre, code,form, fieldset, legend, input, button,textarea, p, blockquote, th, td,span {margin: 0;padding: 0;}
+fieldset, img {border: 0;}
+a {cursor: pointer;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+address, caption, cite, code, dfn,
+em, strong, th, var, optgroup {font-style: normal;font-weight: normal;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+abbr, acronym {border: 0;font-variant: normal;}
+input, button, textarea,
+select, optgroup, option{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
+code, kbd, samp, tt {font-size: 100%;}
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select {*font-size: 100%;}
+body {line-height: 1.5;color:#444444;}
+ol, ul , li {list-style: none;}
+del, ins {text-decoration: none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+caption, th {text-align: left;}
+sup, sub {font-size: 100%;vertical-align: baseline;}
+/* remember to highlight anchors and inserts somehow! */
+:link, :visited , ins {text-decoration: none;}
+a:hover { text-decoration:none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+/* CSS Document */
+/*
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+     2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+     3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：<ngkshao@gmail.com>, <lovemekaikai@126.com>
+*/
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {margin: 0;padding: 0;}
+/** 设置默认字体 **/
+body,button, input, select, textarea /* for ie */ {font: 12px/1.5 "Microsoft YaHei"; color: #666;}
+h1, h2, h3, h4, h5, h6 { font-size: 100%;color: #666; } 
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul, ol { list-style: none; color: #666;}
+/** 重置文本格式元素 **/
+a { text-decoration: none; color: #666;}
+a:hover { text-decoration: none; }
+a:focus { outline:0 none; text-decoration: none;}
+sup { vertical-align: text-top; } /* 重置，减少对行高的影响 */
+sub { vertical-align: text-bottom; }
+/** 重置表单元素 **/
+img { border: 0; display: block; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,summary, time, mark, audio, video {display: block; margin: 0;padding: 0;}
+mark { background: #ff0; }
+/*定位*/
+/*清除浮动*/
+.clear:after{visibility: hidden;display: block;font-size: 0;content: "";clear: both;height: 0;}
+.clear{zoom:1;}
+.clearFloat{clear: both;}
+.clearFix{*zoom:1}
+.clearFix:after{content:'';display:table;clear:both;}
+.fl{float: left;display: inline;}
+.fr{float: right;display: inline;}
+.zoom{zoom:1;/*针对IE6*/}
+.none{display: none;}
+.show{display:block;}
+.hidden{visibility: hidden;}
+.pr{position: relative;}
+.pa{position: absolute;}
+.tl{text-align: left;}
+.tr{text-align: right;}
+.tc{text-align: center;}
+.bc{margin-left: auto;margin-right: auto;}
+button{border:0;overflow: visible;outline: none;}
+img{overflow: hidden;}
+
+
+
+
+
+

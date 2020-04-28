@@ -1,0 +1,59 @@
+#RB-header {
+  background-color: rgba(0, 0, 0, 0.45);
+  height: 1.47rem;
+}
+#RB-header ul li {
+  line-height: 1.47rem;
+}
+.price-banner {
+  width: 19.2rem;
+  height: 10rem;
+  border: solid 0.01rem #d2d2d2;
+}
+.price-banner img {
+  max-width: 19.2rem;
+}
+.price-banner .price-banner-font {
+  position: absolute;
+  top: 1.64rem;
+  left: 0;
+  margin-left: 3.6rem;
+}
+.price-banner .price-banner-font h3 {
+  font-size: 0.48rem;
+  color: #ffffff;
+  line-height: 1rem;
+}
+.price-banner .price-banner-font p {
+  font-size: 0.36rem;
+  color: #fefefe;
+  line-height: 1.28rem;
+}
+.price-banner .price-banner-font .last-p {
+  padding-top: 0.4rem;
+}
+.price-banner .price-banner-font input {
+  margin-right: 0.47rem;
+}
+.price-banner .price-banner-font .btn1 {
+  width: 4.18rem;
+  height: 0.8rem;
+  background-color: #34a3ff;
+  border-radius: 0.04rem;
+}
+.price-banner .price-banner-font .btn2 {
+  width: 2.43rem;
+  height: 0.8rem;
+  background-color: #22628c;
+  border-radius: 0.04rem;
+}
+#RB-choose {
+  height: 4.65rem;
+  margin-top: 1.2rem;
+}
+#RB-choose .RB-choose-content {
+  height: 100%;
+}
+#RB-footer {
+  background-color: rgba(0, 0, 0, 0.9);
+}

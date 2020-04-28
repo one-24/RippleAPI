@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/Docs.css">
+    <title>瑞波API</title>
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <header id="RB-header">
+        <ul>
+            <li class="fl"><a href="/index.html" data-localize="NavHome">首页</a></li>
+            <li class="fl"><a data-localize="NavAPI" href="/pages/API/API.html">瑞波API</a></li>
+            <li class="fl"><a data-localize="NavPrice" href="/pages/Price/Price.html">价格</a></li>
+            <li class="fl"><a data-localize="NavDocs" href="#" class="navBarActive">相关文档</a></li>
+            <li class="fl"><a data-localize="NavHelp" href="/pages/Help/Help.html">帮助</a></li>
+            <li class="fl"><a data-localize="NavAPP" href="/pages/APP/APP.html" >瑞波钱包APP</a></li>
+            <li class="fl toggleDis" id="RB-header-personal">
+                <a data-localize="NavPersonal" href="/pages/Personal/Personal.html">个人中心</a>
+            </li>
+            <li class="fl" id="RB-header-login">
+                <a href="#">
+                    <span data-localize="NavLogin">登录</span>
+                </a>
+                <span>/</span>
+                <a href="#" data-localize="NavRegister">注册</a>
+            </li>
+            <li class="fl" id="RB-header-language">
+                <a href="#" >简体中文</a><br />
+                <span class="languageEn languageSpan">English</span>
+            </li>
+        </ul>
+    </header>
+
+
+    <!-- main 主体部分 -->
+    <section class="Docs-main boxs">
+        <div class="RB-layout">
+            <div class="Docs-main-box">
+                <div class="Docs-main-icon">
+                    <img src="/images/指南.png" alt="指南s">
+                </div>
+                <p data-localize="DocsMainP1">开发者指南</p>
+            </div>
+            <div class="Docs-main-box">
+                <div class="Docs-main-icon">
+                    <img src="/images/瑞波币.png" alt="指南s">
+                </div>
+                <p data-localize="NavAPI">瑞波API</p>
+            </div>
+            <div class="Docs-main-box">
+                <div class="Docs-main-icon">
+                    <img src="/images/sdk.png" alt="指南s">
+                </div>
+                <p data-localize="DocsMainP2">SDK文档</p>
+            </div>
+            <div class="Docs-main-box">
+                <div class="Docs-main-icon">
+                    <img src="/images/faq.png" alt="指南s">
+                </div>
+                <p>FAQ</p>
+            </div>
+            <span class="block"></span>
+        </div>
+    </section>
+
+    <!-- 客服支持 -->
+    <div id="RB-choose">
+        <div class="RB-layout">
+            <div class="RB-choose-content">
+                <p class="RB-choose-customer">
+                    <span data-localize="IndexChooseCustomer">
+                        客服支持
+                    </span>
+                </p>
+                <ul class="RB-mode">
+                    <li class="boxs fl">
+                        136-9795-6547
+                    </li>
+                    <li class="boxs fl">
+                        fhenif4784
+                    </li>
+                    <li class="boxs fr">
+                        498462194
+                    </li>
+                </ul>
+                <p data-localize="IndexChooseCustomerTime"  class="RB-time">服务时间：周一至周五9：00-18：00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="RB-footer" class="boxs">
+        <p>© 2014-2018 Jongde Software LLC All rights reserved</p>
+    </div>
+
+    <!-- modal -->
+    <div class="modalBox"></div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/getScreen.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/jquery.localize.min.js"></script>
+
+</body>
+
+</html>

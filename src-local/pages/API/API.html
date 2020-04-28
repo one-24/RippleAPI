@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src-local/css/reset.css">
+    <link rel="stylesheet" href="/src-local/css/public.css">
+    <link rel="stylesheet" href="/src-local/css/API.css">
+    <title data-localize="indexTitle">瑞波API</title>
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <header id="RB-header">
+        <ul>
+            <li class="fl"><a href="/src-local/index.html" data-localize="NavHome" >首页</a></li>
+            <li class="fl"><a class="navBarActive"  data-localize="NavAPI" href="#">瑞波API</a></li>
+            <li class="fl"><a data-localize="NavPrice" href="/src-local/pages/Price/Price.html">价格</a></li>
+            <li class="fl"><a data-localize="NavDocs" href="/src-local/pages/Docs/Docs.html">相关文档</a></li>
+            <li class="fl"><a data-localize="NavHelp" href="/src-local/pages/Help/Help.html">帮助</a></li>
+            <li class="fl"><a data-localize="NavAPP" href="/src-local/pages/APP/APP.html">瑞波钱包APP</a></li>
+            <li class="fl toggleDis" id="RB-header-personal">
+                <a data-localize="NavPersonal" href="/src-local/pages/Personal/Personal.html">个人中心</a>
+            </li>
+            <li class="fl" id="RB-header-login">
+                <a href="#">
+                    <span data-localize="NavLogin">登录</span>
+                </a>
+                <span>/</span>
+                <a href="#" data-localize="NavRegister">注册</a>
+            </li>
+            <li class="fl" id="RB-header-language">
+                <a href="#" >简体中文</a><br />
+                <span class="languageEn languageSpan">English</span>
+            </li>
+        </ul>
+    </header>
+    <!-- banner -->
+    <div class="API-banner">
+        <div class="API-banner-font">
+            <h2>RIPPLENET</h2>
+            <h2 data-localize="APIBannerPaymentServices">提供畅通支付服务</h2>
+            <span class="block"></span>
+        </div>
+    </div>
+
+    <!-- main -->
+    <section class="API-main boxs">
+        <div class="RB-layout">
+            <h5 class="API-main-title">RIPPLENET PROVIDES SMOOTH PAYMENT SERVICE</h5>
+            <h5 class="API-main-title API-main-title2" data-localize="APIBannerPaymentServices">提供畅通支付服务</h5>
+            <div class="API-main-pay">
+                <div class="one-pay boxs fl">
+                    <div class="one-pay-top">
+                        <div class="circle">
+                            <div class="circle-content boxs"></div>
+                        </div>
+                        <div class="icon">
+                            <img src="/src-local/images/银行.png" alt="">
+                        </div>
+                        <p class="one-pay-font" data-localize="APIMainBank">银行</p>
+                        <p class="one-pay-font" data-localize="APIMainIncome">创收新<span data-localize="APIMainIncomeWay">途径</span></p>
+                        <p class="pp" data-localize="APIMainManyCountries">瑞波现已在27个国家银行实现全球支付、实时处理跨境支付、追踪资金流向、即时汇款与清算；还可解决成本高、难度高的新市场扩展问题，提供银行创收新途径。</p>
+                    </div>
+                </div>
+                <div class="one-pay boxs fl pdl">
+                    <div class="one-pay-top">
+                        <div class="circle">
+                            <div class="circle-content boxs"></div>
+                        </div>
+                        <div class="icon">
+                            <img src="/src-local/images/待支付.png" alt="">
+                        </div>
+                        <p class="one-pay-font" data-localize="APIMainSuppliers">支付服务供应商</p>
+                        <p class="one-pay-font" data-localize="APIMainPayScope">支付范围全<span data-localize="APIMainCovered">覆盖</span></p>
+                        <p class="pp" data-localize="APIMainPp1">瑞波在提供全球支付解决方案的同时也供了更多客户和更大的交易量，将瑞波与金融机构互相关联，让支付更加安全透明可靠，端到端的追溯让支付更加标准化，流程更加畅通。</p>
+                    </div>
+                </div>
+                <div class="one-pay boxs fl">
+                    <div class="one-pay-top">
+                        <div class="circle">
+                            <div class="circle-content boxs"></div>
+                        </div>
+                        <div class="icon">
+                            <img src="/src-local/images/企业(1).png" alt="">
+                        </div>
+                        <p class="one-pay-font" data-localize="APIMainEnterprise">企业</p>
+                        <p class="one-pay-font" data-localize="APIMainSimplified">简化支付<span data-localize="APIMainSimplifiedProcess">流程</span></p>
+                        <p class="pp" data-localize="APIMainPp2">瑞波出色的数据整合能力，简化了企业支付程序，尤其是跨境企业在繁杂的全球支付面前，提高了工作效率，节约了时间、人力成本，还可掌握款项流向动态，向企业提供了高效支付服务。</p>
+                    </div>
+                </div>
+                <div class="one-pay boxs fl pdl">
+                    <div class="one-pay-top">
+                        <div class="circle">
+                            <div class="circle-content boxs"></div>
+                        </div>
+                        <div class="icon">
+                            <img src="/src-local/images/XRP.png" alt="">
+                        </div>
+                        <p class="one-pay-font">XRP</p>
+                        <p class="one-pay-font" data-localize="APIMainSafeFunds">安全可靠的资金流动<span data-localize="APIMainSafeFundsMethods">方式</span></p>
+                        <p class="pp" data-localize="APIMainPp3">XRP是瑞波为解决企业全球支付难题而生的一种安全可靠的资金流动方式。由于XRP作为一种全球支付的数字货币则更加安全可靠，让交易平台可以处理更多的支付数量，获得更加稳定的支付数量。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="API-main-join">
+                <h5 class="API-main-title">RIPPLE'S PARTICIPANTS</h5>
+                <h5 class="API-main-title"><span data-localize="APIMainJoinParticipants">瑞波的参与者</span></h5>
+                <div class="main-join-left fl boxs">
+                    <div class="main-join-icon">
+                    </div>
+                    <div class="main-join-content1">
+                        <p class="main-join-title" data-localize="APIMainJoinPromoter">
+                            瑞波的推动者
+                        </p>
+                        <p class="main-join-fonts" data-localize="APIMainPp4">
+                            推动者包括希望为企业和消费者处理付款、彼此提供流动资金的银行，银行利用瑞波提升对现有用户的服务质量，还可同时获得新客户。数字货币XRP的出现进一步降低了银行的成本，提供了零阻碍区块链技术解决方案的全球支付体验，即时安全、高效便捷。使用瑞波的银行足迹遍布全球，包括旧金山、纽约、伦敦、悉尼、孟买和卢森堡等地。
+                        </p>
+                    </div>
+                </div>
+                <div class="main-join-right fr boxs">
+                    <div class="main-right-icon"></div>
+                    <div class="main-join-content2">
+                        <p class="join-right-title" data-localize="APIMainJoinInitiator">
+                            支付发起者
+                        </p>
+                        <p class="join-right-fonts" data-localize="APIMainPp5">
+                            在全球供应链种进行大额支付以获得更大的资本效率的企业、有着大量小额款项支付到全球各地供应商的平台企业、克服低效率高成本的银行和支付供应商和需要费用低、可实时追踪的全球付款的消费者。
+                        </p>
+                    </div>
+                </div>
+                <span class="block"></span>
+            </div>
+            <div class="API-main-advantage">
+                <div class="main-advantage-box fl">
+                    <p class="advantage-one"><span data-localize="APIMainAdvantageSpeed">支付速度</span></p>
+                    <p class="advantage-two" data-localize="APIMainAdvantageSpeedP">4秒内完成付款结算，全球支付不受跨境困扰。</p>
+                </div>
+                <div class="main-advantage-box fl">
+                    <p class="advantage-one"><span data-localize="APIMainAdvantageScalability">可扩展性</span></p>
+                    <p class="advantage-two" data-localize="APIMainAdvantageScalabilityP">强大的可扩展性和交易处理能力，每秒连续处理1500笔交易。</p>
+                </div>
+                <div class="main-advantage-box fl">
+                    <p class="advantage-one"><span data-localize="APIMainAdvantageSafe">安全稳定</span></p>
+                    <p class="advantage-two" data-localize="APIMainAdvantageSafeP">XRP具备稳定的技术支持和完善的制度体系，畅通极致体验。</p>
+                </div>
+            </div>
+            <!-- 客服支持 -->
+            <div id="RB-choose">
+                <div class="RB-layout">
+                    <div class="RB-choose-content">
+                        <p class="RB-choose-customer">
+                            <span data-localize="IndexChooseCustomer">
+                                客服支持
+                            </span>
+                        </p>
+                        <ul class="RB-mode">
+                            <li class="boxs fl">
+                                136-9795-6547
+                            </li>
+                            <li class="boxs fl">
+                                fhenif4784
+                            </li>
+                            <li class="boxs fr">
+                                498462194
+                            </li>
+                        </ul>
+                        <p class="RB-time" data-localize="IndexChooseCustomerTime">服务时间：周一至周五9：00-18：00</p>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <!-- footer -->
+    <div id="RB-footer" class="boxs">
+        <p>© 2014-2018 Jongde Software LLC All rights reserved</p>
+    </div>
+    <!-- modal -->
+    <div class="modalBox"></div>
+
+    <script src="/src-local/js/jquery.min.js"></script>
+    <script src="/src-local/js/getScreen.js"></script>
+    <script src="/src-local/js/login.js"></script>
+    <script src="/src-local/js/jquery.localize.min.js"></script>
+
+    <script>
+
+        // main-join-content 瑞波的参与者 下面左右两边内容切换显示
+        ;function my$(name) {
+            return document.getElementsByClassName(name)[0];
+        };
+        function animate(el1, el2, img, size, time) {
+            // console.log(this)
+            const st1 = el1.style;
+            st1.background = `url(${img}) no-repeat left top`;
+            st1.backgroundSize = size;
+            el2.style.transition = `all ${time} linear`;
+            el2.style.height = "8.85rem";
+        };
+
+        my$("main-join-icon").onmouseover = function () {
+            $(".main-join-content2").height(0);
+            animate(this, my$("main-join-content1"), '/src-local/images/网络.png', "1.56rem", "1.5s")
+            $(".main-right-icon").css({
+                "background":"url(/src-local/images/用户.png) no-repeat left top",
+                "backgroundSize":"1.47rem"
+            })
+        };
+
+        my$("main-right-icon").onmouseover = function () {
+            $(".main-join-content1").height(0);
+            $(".main-join-icon").css({
+                "background":"url(/src-local/images/网络深色.png) no-repeat left top",
+                "backgroundSize":"1.56rem",
+                "transition":"3s"
+            })
+            animate(this, my$("main-join-content2"), '/src-local/images/用户白色.png', "1.47rem", "1.5s");
+        };
+
+
+
+    </script>
+</body>
+
+</html>

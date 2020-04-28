@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src-local/css/reset.css">
+    <link rel="stylesheet" href="/src-local/css/public.css">
+    <link rel="stylesheet" href="/src-local/css/Price.css">
+    <title>瑞波API</title>
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <header id="RB-header">
+        <ul>
+            <li class="fl"><a href="/src-local/index.html" data-localize="NavHome">首页</a></li>
+            <li class="fl"><a data-localize="NavAPI" href="/src-local/pages/API/API.html">瑞波API</a></li>
+            <li class="fl"><a data-localize="NavPrice" href="#" class="navBarActive">价格</a></li>
+            <li class="fl"><a data-localize="NavDocs" href="/src-local/pages/Docs/Docs.html">相关文档</a></li>
+            <li class="fl"><a data-localize="NavHelp" href="/src-local/pages/Help/Help.html" >帮助</a></li>
+            <li class="fl"><a data-localize="NavAPP" href="/src-local/pages/APP/APP.html">瑞波钱包APP</a></li>
+            <li class="fl toggleDis" id="RB-header-personal">
+                <a data-localize="NavPersonal" href="/src-local/pages/Personal/Personal.html">个人中心</a>
+            </li>
+            <li class="fl" id="RB-header-login">
+                <a href="#">
+                    <span data-localize="NavLogin">登录</span>
+                </a>
+                <span>/</span>
+                <a href="#" data-localize="NavRegister">注册</a>
+            </li>
+            <li class="fl" id="RB-header-language">
+                <a href="#" >简体中文</a><br />
+                <span class="languageEn languageSpan">English</span>
+            </li>
+        </ul>
+    </header>
+
+
+    <!-- banner -->
+    <section class="price-banner">
+        <div class="price-banner-font">
+            <h3 data-localize="PriceBannerPricing">定价</h3>
+            <p data-localize="PriceBannerPricingMethod">计价方式：</p>
+            <p data-localize="PriceBannerHandlingFee">
+                根据每笔转账的交易金额收取5%的手续费
+            </p>
+            <p class="last-p" data-localize="PriceBannerCostBudget">费用预算：</p>
+            <input type="text" value="输入XRP转账数量" class="RB-btn-use btn1" data-localize="PriceBannerNumberOfTransfers">
+            <input type="button" value="预估费用" class="RB-btn-use btn2" data-localize="PriceBannerEstimatedFee">
+            <input type="button" value="立即使用" class="RB-btn-use btn2" data-localize="IndexBannerUseNow">
+            <h2 class="estimated"><em data-localize="PriceBannerEstimatedTransferVolume">当前预估转账量 : </em><span class="EstimatedTransferVolume"> 1000</span> <em data-localize="PriceBannerEstimatedHandlingFee">; 预估手续费用 : </em><span class="EstimatedServiceCharge">100</span></h2>
+        </div>
+    </section>
+
+    <!-- 客服支持 -->
+    <div id="RB-choose">
+        <div class="RB-layout">
+            <div class="RB-choose-content">
+                <p class="RB-choose-customer">
+                    <span data-localize="IndexChooseCustomer">
+                        客服支持
+                    </span>
+                </p>
+                <ul class="RB-mode">
+                    <li class="boxs fl">
+                        136-9795-6547
+                    </li>
+                    <li class="boxs fl">
+                        fhenif4784
+                    </li>
+                    <li class="boxs fr">
+                        498462194
+                    </li>
+                </ul>
+                <p class="RB-time" data-localize="IndexChooseCustomerTime">服务时间：周一至周五9：00-18：00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="RB-footer" class="boxs">
+        <p>© 2014-2018 Jongde Software LLC All rights reserved</p>
+    </div>
+
+    <!-- modal -->
+    <div class="modalBox"></div>
+
+    <script src="/src-local/js/jquery.min.js"></script>
+    <script src="/src-local/js/getScreen.js"></script>
+    <script src="/src-local/js/login.js"></script>
+    <script src="/src-local/js/jquery.localize.min.js"></script>
+    <script>
+        ;$(".btn2").on("click",function(){
+            // alert("haha")
+            let num = $(".btn1").val();
+            if(num > 0){
+                $.ajax({
+                url:"http://192.168.101.161:8082/getBudgetPrice",
+                type:"post",
+                data:{
+                    num
+                },
+                success:function(res){
+                    if(res.msgCode == "200" && res.result == "SUCCESS"){
+                        $(".EstimatedTransferVolume").text(num);
+                        $(".EstimatedServiceCharge").text(res.data);
+                        $(".estimated").css("opacity","1");
+                        setTimeout(function(){
+                            $(".estimated").css("opacity","0");
+                        },60000);
+                    }else{
+                        alert(res.msgContent)
+                    }
+                }
+            })
+            }else{
+                alert("转账数量必须大于0")
+            }
+            
+        })
+    </script>
+</body>
+
+</html>

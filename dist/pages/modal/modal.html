@@ -1,0 +1,219 @@
+<!-- CryptoJS --><script src="/js/crypto-js.js"></script><div class="modal modal-register"><div class="modal-background"></div><div class="modal-content"><div class="info boxs"><form action=""><a href="#" class="block logo"><img src="/images/LOGO.png" alt=""> </a><input class="inputText boxs email" type="text" placeholder="请输入邮箱账号" data-localize="ModalEmail"> <input class="inputText boxs code" type="text" placeholder="请输入验证码" data-localize="ModalAuthenticationCode"> <input class="inputText boxs password" type="password" placeholder="请输入登录密码" data-localize="ModalPassword"> <input class="inputText boxs confirmPsw" type="password" placeholder="再次确认登录密码" data-localize="ModalPasswordOneMore"> <input type="button" value="注册" class="btn registerBtn" data-localize="NavRegister"><p data-localize="ModalhaveAccount">已有账号？<a href="#" data-localize="ModalGoLogin" id="modalRegisterGoLogin">去登录</a></p><span class="getVerificationCode" data-localize="ModalGetAccount">获取验证码</span></form></div></div><button class="modal-close is-large" aria-label="close"></button></div><div class="modal modal-login"><div class="modal-background"></div><div class="modal-content"><div class="info boxs"><form action=""><a href="#" class="block logo"><img src="/images/LOGO.png" alt=""> </a><input class="inputText boxs loginEmail" type="email" placeholder="请输入邮箱账号" data-localize="ModalEmail"> <input class="inputText boxs loginPas" type="password" placeholder="请输入登录密码" data-localize="ModalPassword"> <input type="button" value="登录" class="btn loginBtn" data-localize="NavLogin"><p class="forgetPasswordP"><a href="#" class="forgetPassword" data-localize="ModalForgotPassword">忘记密码？</a></p><p data-localize="ModalhaveAccount">没有账号？<a href="#" data-localize="ModalGoLogin" id="modalRegisterGoRegister">去注册</a></p></form></div></div><button class="modal-close is-large" aria-label="close"></button></div><div class="modal modal-forget"><div class="modal-background"></div><div class="modal-content"><div class="info boxs"><form action=""><a href="#" class="block logo"><img src="/images/LOGO.png" alt=""> </a><input class="inputText boxs email" type="text" placeholder="请输入邮箱账号" data-localize="ModalEmail"> <input class="inputText boxs code" type="text" placeholder="请输入验证码" data-localize="ModalAuthenticationCode"> <input class="inputText boxs password" type="password" placeholder="请输入登录密码" data-localize="ModalPassword"> <input class="inputText boxs confirmPsw" type="password" placeholder="再次确认登录密码" data-localize="ModalPasswordOneMore"> <input type="button" value="确认修改" class="forgetBtn btn" data-localize="PersonChangeConfirm"> <span class="getVerificationCode" data-localize="ModalGetAccount">获取验证码</span></form></div></div><button class="modal-close is-large" aria-label="close"></button></div><script>(function () {
+        // 获取语言
+        let lang = window.localStorage.getItem("lang");
+        if (lang == "En") {
+            $("[data-localize]").localize("/json/lang", { language: "en" });
+        } else {
+            $("[data-localize]").localize("/json/lang", { language: "ch" });
+        }
+        var baseUrl = "xrp.XRPPAY.VIP"
+        //加密的私钥
+        var key = 'WalletApi';
+        // DES加密
+        function encryptByDES(message, key) {
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return encrypted.toString();
+        }
+        //发送请求获取邮箱验证码
+        $(".getVerificationCode").on("click", function () {
+            let lang = window.localStorage.getItem("lang");
+            let re = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+            let mail = $(this).parent().children(".email").val();
+            let codeEl = $(this);
+            if (re.test(mail)) {
+                $.ajax({
+                    url: baseUrl + "/user/sendMailCode",
+                    type: "post",
+                    data: {
+                        mail: mail
+                    },
+                    success: function (res) {
+                        if(res.msgCode == "200"){
+                    if(lang == "Ch"){
+                        codeEl.text("60秒后可重新获取").css("color","#ccc");
+                    setTimeout(() => {
+                        codeEl.text("发送验证码").css("color","#1b8eed");
+                    },60000)
+                    }else{
+                        codeEl.text("Can be re-fetched in 60 seconds").css("color","#ccc");
+                    setTimeout(() => {
+                        codeEl.text("Send a verification code").css("color","#1b8eed");
+                    },60000)
+                    }
+                    
+            }       
+                    }
+                })
+            } else {
+                if(lang && lang == "En"){
+                    alert("Please enter the correct email account number")
+                }else{
+                    alert("请输入正确的邮箱账号");
+                }
+            }
+
+        })
+        // 注册
+        $(".registerBtn").on("click", function () {
+            let lang = window.localStorage.getItem("lang");
+            var loginName = $(".email").val();
+            var code = $(".code").val();
+            var psw = encryptByDES($(".password").val(), key);
+            var confirmPsw = encryptByDES($(".confirmPsw").val(), key);
+            if (loginName && code && psw && confirmPsw) {
+                $.ajax({
+                    url: baseUrl + "/user/register",
+                    type: "post",
+                    data: {
+                        loginName,
+                        code,
+                        psw,
+                        confirmPsw
+                    },
+                    success: function (res) {
+                        // 弹窗提醒去个人中心 完善数据
+                        if (lang == "Ch") {
+                            alert("请登录后去个人中心 - 个人信息一栏完善信息")
+                        } else {
+                            alert("Please login to the Personal center-Personal Information column perfect information")
+                        }
+                        $(".modal-register").removeClass("is-active");
+                    }
+                })
+            } else {
+                if (lang && lang == "En") {
+                    alert("Please fill in the registration information completely")
+                } else {
+                    alert("请完整填写注册信息")
+                }
+            }
+        })
+
+        // 忘记密码
+        $(".forgetPassword").click(function () {
+            $(".modal-login").removeClass("is-active");
+            $(".modal-forget").addClass("is-active");
+        })
+        $(".forgetBtn").on("click", function () {
+            let lang = window.localStorage.getItem("lang");
+            let mail = $(".modal-forget .email").val();
+            let code = $(".modal-forget .code").val();
+            let psw = encryptByDES($(".modal-forget .password").val(), key);
+            let confirmPsw = encryptByDES($(".modal-forget .confirmPsw").val(), key);
+            $.ajax({
+                url: baseUrl + "/user/forgetPsw",
+                type: "post",
+                data: {
+                    mail,
+                    code,
+                    psw,
+                    confirmPsw
+                },
+                success: function (res) {
+                    if (res.msgCode == 200) {
+                        if (lang == "Ch") {
+                            alert("修改成功请重新登录");
+                        } else {
+                            alert("Modified successfully please log in again");
+                        }
+                        $(".modal-forget").removeClass("is-active");
+                    }
+                }
+            })
+            if (!mail) {
+                if (lang == "En") {
+                    alert("Please enter your email account");
+                    return
+                } else {
+                    alert("请输入邮箱账号")
+                    return
+                }
+            }
+            if (!code) {
+                if (lang == "En") {
+                    alert("Please enter your authentication code");
+                    return
+                } else {
+                    alert("请输入验证码")
+                    return
+                }
+            }
+            if (!$(".modal-forget .password").val()) {
+                if (lang == "En") {
+                    alert("Please enter your password");
+                    return
+                } else {
+                    alert("请输入您的密码")
+                    return
+                }
+            }
+        })
+
+        // 登录
+        $(".loginBtn").on("click", function () {
+            let lang1 = window.localStorage.getItem("lang");
+            var loginname = $(".loginEmail").val();
+            if (!loginname && $(".loginPas").val()) {
+                if (lang1 == "En") {
+                    alert("Please enter your email account");
+                    return
+                } else {
+                    alert("请输入邮箱账号")
+                    return
+                }
+            }
+            if (!$(".loginPas").val() && loginname) {
+                if (lang1 == "En") {
+                    alert("Please enter your password");
+                    return
+                } else {
+                    alert("请输入密码")
+                    return
+                }
+            }
+            if (!loginname && !$(".loginPas").val()) {
+                if (lang1 == "En") {
+                    alert("Please enter your account number and password");
+                    return
+                } else {
+                    alert("请输入账号和密码")
+                    return
+                }
+            }
+            var psw = encryptByDES($(".loginPas").val(), key);
+            $.ajax({
+                url: baseUrl + "/login",
+                type: "post",
+                async: true,
+                data: {
+                    loginname,
+                    psw
+                },
+                success: function (res) {
+                    if (res.msgCode == "200" && res.result == "SUCCESS") {
+                        // 保存 用户信息和 token 到本地
+                        var user = {
+                            name: loginname,
+                            pass: psw
+                        };
+                        var token = res.data;
+                        window.localStorage.setItem("user", JSON.stringify(user));
+                        window.localStorage.setItem("tok", token);
+                        // 显示个人中心  刷新页面
+                        $("#RB-header-login").addClass("toggleDis");
+                        $("#RB-header-personal").removeClass("toggleDis");
+                        // 隐藏模态框
+                        $(".modal").removeClass("is-active");
+                    } else if (res.msgCode == "303" && res.result == "FAIL") {
+                        alert("用户不存在 请先注册")
+                    } else {
+                        alert("登录失败请输入正确的账号和密码");
+                    }
+                }
+            })
+        })
+    })()</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/APP.css">
+    <title data-localize="indexTitle">瑞波API</title>
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <header id="RB-header">
+        <ul>
+            <li class="fl"><a href="/index.html" data-localize="NavHome">首页</a></li>
+            <li class="fl"><a data-localize="NavAPI" href="/pages/API/API.html">瑞波API</a></li>
+            <li class="fl"><a data-localize="NavPrice" href="/pages/Price/Price.html">价格</a></li>
+            <li class="fl"><a data-localize="NavDocs" href="/pages/Docs/Docs.html">相关文档</a></li>
+            <li class="fl"><a data-localize="NavHelp" href="/pages/Help/Help.html">帮助</a></li>
+            <li class="fl"><a data-localize="NavAPP" href="#"  class="navBarActive" >瑞波钱包APP</a></li>
+            <li class="fl toggleDis" id="RB-header-personal">
+                <a data-localize="NavPersonal" href="/pages/Personal/Personal.html">个人中心</a>
+            </li>
+            <li class="fl" id="RB-header-login">
+                <a href="#">
+                    <span data-localize="NavLogin">登录</span>
+                </a>
+                <span>/</span>
+                <a href="#" data-localize="NavRegister">注册</a>
+            </li>
+            <li class="fl" id="RB-header-language">
+                <a href="#" >简体中文</a><br />
+                <span class="languageEn languageSpan">English</span>
+            </li>
+        </ul>
+    </header>
+
+    <div class="APP-main">
+        <div class="RB-layout">
+            <div class="APP-main-right boxs fr">
+                <div class="main-right-title">
+                    <h3 data-localize="APPMainRightTitle">高效&nbsp;&nbsp;便捷&nbsp;&nbsp;安全&nbsp;&nbsp;稳定</h3>
+                    <span class="block"></span>
+                </div>
+                <p data-localize="APPMainRightP">瑞波钱包APP是一款国际领先的瑞波币管理平台APP，一直以“高效便捷、安全稳定”的平台服务，领先业界多年，服务各国用户。瑞波钱包APP提供安卓版、苹果版两种版本APP下载，满足不同用户需求；另独有的资金保障模式，运用完善的内部制度，全方位保护用户资产安全、确保用户数据安全与APP的高效运营。</p>
+                <div class="main-right-er fr">
+                    <div>
+                        <img src="/images/二维码.png" alt="">
+                    </div>
+                    <em class="block" data-localize="APPMainRightErIOS">ios版下载</em>
+                </div>
+                <div class="main-right-er fr">
+                    <div>
+                        <img src="/images/二维码.png" alt="">
+                    </div>
+                    <em class="block" data-localize="APPMainRightErAndroid">安卓版下载</em>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div id="RB-footer" class="boxs">
+        <p>© 2014-2018 Jongde Software LLC All rights reserved</p>
+    </div>
+    <!-- modal -->
+    <div class="modalBox"></div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/getScreen.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/jquery.localize.min.js"></script>
+
+</body>
+
+</html>

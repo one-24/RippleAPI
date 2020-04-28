@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src-local/css/reset.css">
+    <link rel="stylesheet" href="/src-local/css/public.css">
+    <link rel="stylesheet" href="/src-local/css/Personal.css">
+    <title>瑞波API</title>
+</head>
+
+<body>
+    <!-- 头部导航条 -->
+    <header id="RB-header">
+        <ul>
+            <li class="fl"><a href="/src-local/index.html" data-localize="NavHome">首页</a></li>
+            <li class="fl"><a href="/src-local/pages/API/API.html" data-localize="NavAPI">瑞波API</a></li>
+            <li class="fl"><a href="/src-local/pages/Price/Price.html" data-localize="NavPrice">价格</a></li>
+            <li class="fl"><a href="/src-local/pages/Docs/Docs.html" data-localize="NavDocs">相关文档</a></li>
+            <li class="fl"><a href="/src-local/pages/Help/Help.html" data-localize="NavHelp">帮助</a></li>
+            <li class="fl"><a href="/src-local/pages/APP/APP.html" data-localize="NavAPP">瑞波钱包APP</a></li>
+            <li class="fl">
+                <a href="#" class="navBarActive" data-localize="NavPersonal">个人中心</a>
+            </li>
+            <li class="fl" id="RB-header-language">
+                <a href="#" >简体中文</a><br />
+                <span class="languageEn languageSpan">English</span>
+            </li>
+        </ul>
+    </header>
+    <!-- main -->
+    <div class="Personal-main boxs">
+        <div class="Personal-main-content">
+            <div class="menu fl">
+                <ul>
+                    <li class="menu-first boxs" data-localize="PersonMainMenuPersonalCenter">个人中心</li>
+                    <li class="boxs active" data-localize="PersonMainMenuPersonalInformation">个人信息</li>
+                    <li class="boxs" data-localize="PersonMainMenuTransferRecords">转账记录</li>
+                    <li class="boxs exitLogon" data-localize="PersonMainMenuExitLogin">退出登录</li>
+                </ul>
+            </div>
+            <div class="right tabActive fl boxs tab tab1">
+                <form class="right-personalInfo">
+                    <h2 data-localize="PersonMainMenuPersonalInformation">个人信息</h2>
+
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlEmail">邮箱号:</span>
+                            <input class="input boxs personalEmailNumber" type="email" placeholder="18717810761@163.C0M">
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlPassword">密码:</span>
+                            <input class="input boxs personalPassword" type="password" placeholder="password">
+                            <em class="changePassWord" data-localize="PersonMainControlChange">修改</em>
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlReceiptAddress">收款地址:</span>
+                            <input class="input boxs comeaddress" type="text" placeholder="收款地址" data-localize="PersonMainControlReceiptAddress">
+                            <em class="changeComeaddress" data-localize="PersonMainControlChange">修改</em>
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlHitAddress">打款地址:</span>
+                            <input class="input boxs toaddress" type="text" placeholder="打款地址" data-localize="PersonMainControlHitAddress">
+                            <em class="changeToAddress" data-localize="PersonMainControlChange">修改</em>
+                        </label>
+                    </p>
+                    <p class="control boxs displayKey">
+                        <label>
+                            <span>KEY:</span>
+                            <input class="input boxs inputKey" disabled type="password" placeholder="KEY">
+                            <em class="toggleKey" data-localize="PersonMainControlShow">显示</em>
+                        </label>
+                    </p>
+                    <input type="button" value="申请KEY" class="btn ApplyKeyBtn" data-localize="PersonMainControlGetKey">
+                </form>
+            </div>
+            <div class="rightRecord fl boxs tab tab1">
+                <div class="right-personalInfo">
+                    <h2 data-localize="PersonMainMenuTransferRecords">转账记录</h2>
+                    <p class="title">
+                        <em class="fl" data-localize="PersonMainScreening">筛选 : </em>
+                        <input type="button" class="method fl" value=" ">
+                        <span class="block sanjiao fl"></span>
+                        <span class="block oneMethod" data-localize="PersonMainHit">打款</span>
+                        <span class="block oneMethod" data-localize="PersonMainReceipt">收款</span>
+                        <em data-localize="PersonMainStartTime">开始时间 : </em>
+                        <input type="text" class="text inputStime" placeholder="2018-10-29">
+                        <em data-localize="PersonMainEndTime">结束时间 : </em>
+                        <input type="text" class="text inputEtime" placeholder="2018-10-29">
+                        <input type="button" class="btnExport btnExport1" value="按时间导出" data-localize="PersonMainExportByTime">
+                        <input type="button" class="btnExport btnExport2" value="全部导出" data-localize="PersonMainExportAll">
+                    </p>
+                    <table class="table is-bordered">
+                        <thead id="record-table-thead">
+                            <tr class="tr">
+                                <th data-localize="PersonMainType">类型</th>
+                                <th data-localize="PersonMainControlHitAddress">打款地址</th>
+                                <th data-localize="PersonMainControlReceiptAddress">收款地址</th>
+                                <th data-localize="PersonMainTime">时间</th>
+                                <th data-localize="PersonMainAmount">金额（XRP）</th>
+                                <th data-localize="PersonMainHandlingFee">手续费</th>
+                                <th data-localize="PersonMainFlowNumber">流水号</th>
+                            </tr>
+                        </thead>
+                        <tbody id="record-table-tbody"></tbody>
+                    </table>
+                    <!-- 分页 -->
+                    <ul class="pagination boxs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="RB-footer" class="boxs">
+        <p>© 2014-2018 Jongde Software LLC All rights reserved</p>
+    </div>
+    <!-- 模态框 -->
+    <!-- 修改密码 -->
+    <div class="modal modal-change  modal-changePassWord">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="rightFix fl boxs">
+                <form class="right-personalInfo">
+                    <h2 data-localize="PersonChangePassword">修改密码</h2>
+                    <p class="sendTime boxs"><em data-localize="PersonChangePasSend">已发送(</em><span>60</span><em data-localize="PersonChangePasSecond">)秒</em></p>
+
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlEmail">邮箱号:</span>
+                            <input class="input boxs rightFixEmail " type="email" placeholder="18717810761@163.C0M">
+                        </label>
+                        <em class="rightFixSendMsg" data-localize="PersonChangeSendCode">发送验证码</em>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="ModalAuthenticationCode">请输入验证码:</span>
+                            <input class="input boxs rightFixCode" type="text" placeholder="验证码" data-localize="PersonChangeCode">
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonChangeNewPas">输入新密码:</span>
+                            <input class="input boxs rightFixNewPassword" type="password" placeholder="new password">
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonChangeConfirmNewPas">确认新密码:</span>
+                            <input class="input boxs rightFixSureNewPassword" type="password" placeholder="new password">
+                        </label>
+                    </p>
+                    <input type="button" data-localize="PersonChangeConfirm" value="确认" class="btn btnSureChangePassword">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- key 显示一次 -->
+    <div class="modal Confirmation">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="alertInfo">
+                <h1 data-localize="PersonKeyShowOneTips">提示</h1>
+                <p class="once" data-localize="PersonKeyShowOnce">KEY只显示一次，请妥善保存！</p>
+                <p>
+                    <a href="#" class="fl active btn-sure" data-localize="PersonChangeConfirm">确认</a>
+                    <a href="#" class="fl btn-cancel" data-localize="PersonKeyShowOneCancel">取消</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 修改打款地址 -->
+    <div class="modal modal-change  modal-changeToAddress">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="rightFix fl boxs">
+                <form class="right-personalInfo">
+                    <h2 data-localize="PersonChangeHitAddress">修改打款地址</h2>
+                    <p class="sendTime boxs"><em data-localize="PersonChangePasSend">已发送(</em><span>60</span><em data-localize="PersonChangePasSecond">)秒</em></p>
+
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlEmail">邮箱号:</span>
+                            <input class="input boxs rightFixEmail " type="email" placeholder="18717810761@163.C0M">
+                        </label>
+                        <em class="rightFixSendMsg" data-localize="PersonChangeSendCode">发送验证码</em>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="ModalAuthenticationCode">请输入验证码:</span>
+                            <input class="input boxs rightFixCode" type="text" placeholder="验证码" data-localize="PersonChangeCode">
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonChangeNewHitAddress">输入新打款地址:</span>
+                            <input class="input boxs rightFixNewToAddress" type="text" placeholder="new ToAddress">
+                        </label>
+                    </p>
+                    <input type="button" value="确认" data-localize="PersonChangeConfirm" class="btn btnSureChangeToAddress">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 修改收款地址 -->
+    <div class="modal modal-change  modal-changeComeAddress">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="rightFix fl boxs">
+                <form class="right-personalInfo">
+                    <h2 data-localize="PersonChangeReceiptAddress">修改收款地址</h2>
+                    <p class="sendTime boxs"><em data-localize="PersonChangePasSend">已发送(</em><span>60</span><em data-localize="PersonChangePasSecond">)秒</em></p>
+
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonMainControlEmail">邮箱号:</span>
+                            <input class="input boxs rightFixEmail " type="email" placeholder="18717810761@163.C0M">
+                        </label>
+                        <em class="rightFixSendMsg" data-localize="PersonChangeSendCode">发送验证码</em>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="ModalAuthenticationCode">请输入验证码:</span>
+                            <input class="input boxs rightFixCode" type="text" placeholder="验证码" data-localize="PersonChangeCode">
+                        </label>
+                    </p>
+                    <p class="control boxs">
+                        <label>
+                            <span data-localize="PersonChangeNewReceiptAddress">输入新收款地址:</span>
+                            <input class="input boxs rightFixNewComeAddress" type="text" placeholder="new Comeaddress">
+                        </label>
+                    </p>
+                    <input type="button" value="确认" class="btn btnSureChangeComeAddress" data-localize="PersonChangeConfirm">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/src-local/js/jquery.min.js"></script>
+    <script src="/src-local/js/getScreen.js"></script>
+    <script src="/src-local/js/crypto-js.js"></script>
+    <script src="/src-local/js/template-web.js"></script>
+    <script src="/src-local/js/jquery.localize.min.js"></script>
+    <script type="text/html" id="recordList">
+        {{each recordDataList value i}}
+            <tr class="tr">
+                <th>{{value.type == 1?"打款":"收款"}}</th>
+                <td>
+                    {{value.toaddress}}
+                </td>
+                <td>{{value.fromaddress}}</td>
+                <td>
+                    {{value.transtime}}
+                </td>
+                <td>
+                    {{value.value}}
+                </td>
+                <td>
+                    {{value.fee}}
+                </td>
+                <td>
+                    {{value.orderno}}
+                </td>
+            </tr>
+            {{/each}}
+    </script>
+    <script src="/src-local/js/personal.js"></script>
+
+</body>
+
+</html>
